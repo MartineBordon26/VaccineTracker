@@ -1,11 +1,9 @@
 const express = require('express')
 const path = require('path')
 const methodOverride = require('method-override')
-const bodyParser = require('body-parser');
 
 const mainRoutes = require('./routes/mainRoutes');
 const vaccineRoutes = require('./routes/vaccineRoutes')
-
 
 const PORT = 3001;
 
@@ -14,7 +12,8 @@ const publicPath = path.resolve(__dirname, './public');
 
 app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Motor de vistas
 app.set('view engine', 'pug');
@@ -25,4 +24,4 @@ app.listen(PORT, () => {
 });
 
 app.use('/', mainRoutes)
-app.use('/vaccine', vaccineRoutes)
+app.use('/vaccines', vaccineRoutes)

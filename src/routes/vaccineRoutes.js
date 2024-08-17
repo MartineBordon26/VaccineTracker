@@ -3,6 +3,9 @@ const vaccineController = require('../controllers/vaccineController');
 const router = express.Router();
 
 
-router.get('/lala', vaccineController.index);
+router.get('/', vaccineController.index);
+
+router.get('/create', vaccineController.create)
+router.post('/', vaccineController.save)
 
 module.exports = router;

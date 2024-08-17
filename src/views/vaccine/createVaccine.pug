@@ -1,0 +1,94 @@
+doctype html
+html
+  head
+    title Create New Vaccine
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+       header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 60px
+      }
+
+
+  body
+    header
+      a(href="/") Home
+      a(href="/vaccines") List Vaccine
+      a(href="/vaccines/create") Create Vaccine
+    .container
+      h1 Create New Vaccine
+      form(action="/vaccines" method='POST')
+        label(for="commercialName") Commercial Name
+        input(type="text" name="commercialName" id="commercialName" required)
+
+        label(for="laboratory") Laboratory
+        input(type="text" name="laboratory" id="laboratory" required)
+
+        label(for="vaccineType") Vaccine Type
+        input(type="text" name="vaccineType" id="vaccineType" required)
+
+        label(for="originCountry") Country of Origin
+        input(type="text" name="originCountry" id="originCountry" required)
+
+        //- label(for="manufactureDate") Manufacture Date
+        //- input(type="date" name="manufactureDate" id="manufactureDate" required)
+
+        //- label(for="expirationDate") Expiration Date
+        //- input(type="date" name="expirationDate" id="expirationDate" required)
+
+        //- label(for="purchaseDate") Purchase Date
+        //- input(type="date" name="purchaseDate" id="purchaseDate" required)
+
+        //- label(for="acquisitionDate") Acquisition Date
+        //- input(type="date" name="acquisitionDate" id="acquisitionDate" required)
+
+        button(type="submit") Save Vaccine

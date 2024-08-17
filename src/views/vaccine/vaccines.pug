@@ -21,28 +21,20 @@ html
         color: #fff;
         padding: 10px 0;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 60px
       }
-      h1 {
+      H1 {
         margin: 0;
-      }
-      .content {
-        margin-top: 20px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
       }
 
     body
       header
-        h1 
-          a Vaccine
+          a(href="/") Home
+          a(href="/vaccines") List Vaccine
+          a(href="/vaccines/create") Create Vaccine
+      ul
+      each vaccine in vaccines
+        li #{vaccine.nombre_comercial} - #{vaccine.laboratorio} - #{vaccine.tipo}
