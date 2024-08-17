@@ -1,0 +1,56 @@
+{
+    "vacunas": [
+      {
+        "id": 1,
+        "nombre_comercial": "BCG",
+        "laboratorio": "Lab123",
+        "tipo_vacuna": "Bacilo de Calmette-Guérin",
+        "pais_origen": "Argentina",
+        "fecha_fabricacion": "2024-01-15",
+        "fecha_vencimiento": "2025-01-15",
+        "fecha_compra": "2024-02-01",
+        "fecha_adquisicion": "2024-02-05",
+        "lote_proveedor": {
+          "numero_lote": "L001",
+          "proveedor": "Proveedor A",
+          "cantidad": 1000
+        },
+        "estado": "Disponible"
+      },
+      {
+        "id": 2,
+        "nombre_comercial": "Doble Viral",
+        "laboratorio": "Lab456",
+        "tipo_vacuna": "Sarampión-Rubeola",
+        "pais_origen": "Brasil",
+        "fecha_fabricacion": "2023-12-01",
+        "fecha_vencimiento": "2024-12-01",
+        "fecha_compra": "2024-01-10",
+        "fecha_adquisicion": "2024-01-20",
+        "lote_proveedor": {
+          "numero_lote": "L002",
+          "proveedor": "Proveedor B",
+          "cantidad": 500
+        },
+        "estado": "Disponible"
+      },
+      {
+        "id": 3,
+        "nombre_comercial": "Triple Viral",
+        "laboratorio": "Lab789",
+        "tipo_vacuna": "Sarampión-Rubeola-Paperas",
+        "pais_origen": "Estados Unidos",
+        "fecha_fabricacion": "2023-11-25",
+        "fecha_vencimiento": "2024-11-25",
+        "fecha_compra": "2024-01-15",
+        "fecha_adquisicion": "2024-01-22",
+        "lote_proveedor": {
+          "numero_lote": "L003",
+          "proveedor": "Proveedor C",
+          "cantidad": 2000
+        },
+        "estado": "Disponible"
+      }
+    ]
+  }
+  
