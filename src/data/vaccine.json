@@ -1,5 +1,4 @@
-{
-    "vacunas": [
+[
       {
         "id": 1,
         "nombre_comercial": "BCG",
@@ -51,6 +50,6 @@
         },
         "estado": "Disponible"
       }
-    ]
-  }
+]
+  
   
