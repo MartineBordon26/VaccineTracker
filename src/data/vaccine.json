@@ -2,7 +2,7 @@
  {
   "id": 1,
   "nombre_comercial": "BCG",
-  "laboratorio": "Lab123",
+  "laboratory": "Lab123",
   "tipo_vacuna": "Bacilo de Calmette-Guérin",
   "pais_origen": "Argentina",
   "fecha_fabricacion": "2024-01-15",
@@ -19,7 +19,7 @@
  {
   "id": 2,
   "nombre_comercial": "Doble Viral",
-  "laboratorio": "Lab456",
+  "laboratory": "Lab456",
   "tipo_vacuna": "Sarampión-Rubeola",
   "pais_origen": "Brasil",
   "fecha_fabricacion": "2023-12-01",
@@ -36,7 +36,7 @@
  {
   "id": 3,
   "nombre_comercial": "Triple Viral",
-  "laboratorio": "Lab789",
+  "laboratory": "Lab789",
   "tipo_vacuna": "Sarampión-Rubeola-Paperas",
   "pais_origen": "Estados Unidos",
   "fecha_fabricacion": "2023-11-25",
@@ -52,9 +52,41 @@
  },
  {
   "id": 4,
-  "nombre_comercial": "asas",
+  "name_commercial": "asas",
   "laboratory": "asas",
   "vaccineType": "asas",
   "originCountry": "asas"
+ },
+ {
+  "id": 5,
+  "name_commercial": "test",
+  "laboratory": "lab11122",
+  "vaccineType": "112lab",
+  "originCountry": "lablab"
+ },
+ {
+  "id": 6,
+  "name_commercial": "Prueba12",
+  "laboratory": "12lab",
+  "vaccineType": "lab12",
+  "originCountry": "lab12"
+ },
+ {
+  "id": 7,
+  "name_commercial": "a",
+  "laboratory": "a",
+  "vaccineType": "a",
+  "originCountry": "a"
+ },
+ {
+  "id": 8,
+  "name_commercial": "asas",
+  "laboratory": "sas",
+  "vaccineType": "s",
+  "originCountry": "as",
+  "manufactureDate": "2024-08-22",
+  "expirationDate": "2024-08-22",
+  "purchaseDate": "2024-08-22",
+  "acquisitionDate": "2024-08-22"
  }
 ]

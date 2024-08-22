@@ -23,9 +23,9 @@ const vaccineController = {
 
         
 
-        let {commercialName, laboratory, vaccineType, originCountry} = req.body;
+        let {commercialName, laboratory, vaccineType, originCountry, manufactureDate, expirationDate, purchaseDate, acquisitionDate} = req.body;
+        console.log("req.body ",req.body)
 
-        console.log({commercialName})
 
         const generateId = () =>  {
             let allVaccines = JSON.parse(fs.readFileSync(vaccineJSON, {encoding: 'utf-8'}));
@@ -38,10 +38,14 @@ const vaccineController = {
 
         let newVeccine = {
             id: generateId(),
-            nombre_comercial: commercialName,
+            name_commercial: commercialName,
             laboratory: laboratory,
             vaccineType: vaccineType,
-            originCountry: originCountry
+            originCountry: originCountry,
+            manufactureDate,
+            expirationDate,
+            purchaseDate,
+            acquisitionDate
         }
 
         vaccines.push(newVeccine);
