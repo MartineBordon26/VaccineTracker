@@ -21,8 +21,6 @@ const vaccineController = {
             return res.render(path.resolve('./', './src/views/vaccine/createVaccine'), {errors: errors.mapped(), oldData: req.body});
         }
 
-        
-
         let {commercialName, laboratory, vaccineType, originCountry, manufactureDate, expirationDate, purchaseDate, acquisitionDate} = req.body;
         console.log("req.body ",req.body)
 
@@ -56,6 +54,24 @@ const vaccineController = {
 
         res.redirect('/vaccines');
     },
+    edit: (req, res) =>{
+        const vaccineID = vaccines.find(vaccine => vaccine.id == req.params.id);
+        console.log(vaccineID)
+        res.render(path.resolve('./', './src/views/vaccine/editVaccine'), {vaccineID})
+    },
+    update: (req, res) =>{
+        const vaccineID = vaccines.find(vaccine => vaccine.id == req.params.id);
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render(path.resolve('./', './src/views/vaccine/editVaccine'), {errors: errors.mapped(), oldData: req.body, vaccineID});
+        }
+
+        let idVaccine = req.params.id;
+
+    }
+    
+
 }
 
 module.exports = vaccineController;

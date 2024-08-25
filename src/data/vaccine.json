@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "nombre_comercial": "BCG",
+  "name_commercial": "BCG",
   "laboratory": "Lab123",
   "tipo_vacuna": "Bacilo de Calmette-Guérin",
   "pais_origen": "Argentina",
@@ -18,7 +18,7 @@
  },
  {
   "id": 2,
-  "nombre_comercial": "Doble Viral",
+  "name_commercial": "Doble Viral",
   "laboratory": "Lab456",
   "tipo_vacuna": "Sarampión-Rubeola",
   "pais_origen": "Brasil",
@@ -35,7 +35,7 @@
  },
  {
   "id": 3,
-  "nombre_comercial": "Triple Viral",
+  "name_commercial": "Triple Viral",
   "laboratory": "Lab789",
   "tipo_vacuna": "Sarampión-Rubeola-Paperas",
   "pais_origen": "Estados Unidos",

@@ -1,9 +1,5 @@
 doctype html
 html
-    head
-    title BackOficce - Vaccine
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
     style.
       body {
         font-family: Arial, sans-serif;
@@ -16,25 +12,72 @@ html
         margin: 0 auto;
         padding: 20px;
       }
-      header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 60px
-      }
       H1 {
         margin: 0;
       }
-
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+      .actions button {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .actions .edit-btn {
+        background-color: #28a745;
+        color: white;
+      }
+      .actions .delete-btn {
+        background-color: #dc3545;
+        color: white;
+      }
     body
-      header
-          a(href="/") Home
-          a(href="/vaccines") List Vaccine
-          a(href="/vaccines/create") Create Vaccine
-      ul
-      each vaccine in vaccines
-        li #{vaccine.name_commercial} - #{vaccine.laboratory} - #{vaccine.originCountry}
+      include ../partials/header.pug
+
+      .container
+        h1 Vaccine List
+
+        if vaccines.length
+          table
+            thead
+              tr
+                th Name Commercial
+                th Laboratory
+                th Country of Origin
+                th Manufacture Date
+                th Expiration Date
+                th Action
+            tbody
+              each vaccine in vaccines
+                tr
+                  td #{vaccine.name_commercial}
+                  td #{vaccine.laboratory}
+                  td #{vaccine.originCountry}
+                  td #{vaccine.manufactureDate}
+                  td #{vaccine.expirationDate}
+                  td
+                    .actions
+                      a(href=`/vaccines/edit/${vaccine.id}`)
+                        button.edit-btn Edit
+                      form(action=`/vaccines/delete/${vaccine.id}` method="POST")
+                        button.delete-btn(type="submit") Delete
+        else
+        p No vaccines available.
