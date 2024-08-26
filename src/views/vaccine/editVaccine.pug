@@ -58,34 +58,37 @@ html
         margin-bottom: 60px
       }
 
+
   body
     include ../partials/header.pug
     
     .container
       h1 Create New Vaccine
-      form(action="/vaccines" method='POST')
+      form(action=`/vaccines/edit/${vaccine.id}?_method=PUT` method="POST")
+        if locals.errors && errors.name_commercial
+            span.error #{errors.name_commercial.msg}
         label(for="commercialName") Commercial Name
-        input(type="text" name="commercialName" id="commercialName" required)
+        input(type="text" name="commercialName" id="commercialName" value=vaccine.name_commercial required)
 
         label(for="laboratory") Laboratory
-        input(type="text" name="laboratory" id="laboratory" required)
+        input(type="text" name="laboratory" id="laboratory" value=vaccine.laboratory required)
 
         label(for="vaccineType") Vaccine Type
-        input(type="text" name="vaccineType" id="vaccineType" required)
+        input(type="text" name="vaccineType" id="vaccineType" value=vaccine.vaccineType required)
 
         label(for="originCountry") Country of Origin
-        input(type="text" name="originCountry" id="originCountry" required)
+        input(type="text" name="originCountry" id="originCountry"  value=vaccine.originCountry required)
 
         label(for="manufactureDate") Manufacture Date
-        input(type="date" name="manufactureDate" id="manufactureDate" required)
+        input(type="date" name="manufactureDate" id="manufactureDate" value=vaccine.manufactureDate required)
 
         label(for="expirationDate") Expiration Date
-        input(type="date" name="expirationDate" id="expirationDate" required)
+        input(type="date" name="expirationDate" id="expirationDate" value=vaccine.expirationDate required)
 
         label(for="purchaseDate") Purchase Date
-        input(type="date" name="purchaseDate" id="purchaseDate" required)
+        input(type="date" name="purchaseDate" id="purchaseDate" value=vaccine.purchaseDate required)
 
         label(for="acquisitionDate") Acquisition Date
-        input(type="date" name="acquisitionDate" id="acquisitionDate" required)
+        input(type="date" name="acquisitionDate" id="acquisitionDate" value=vaccine.acquisitionDate required)
 
         button(type="submit") Save Vaccine

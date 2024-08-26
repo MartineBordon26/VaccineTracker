@@ -18,8 +18,7 @@
  },
  {
   "id": 2,
-  "name_commercial": "Doble Viral",
-  "laboratory": "Lab456",
+  "laboratory": "1212",
   "tipo_vacuna": "Sarampión-Rubeola",
   "pais_origen": "Brasil",
   "fecha_fabricacion": "2023-12-01",
@@ -31,7 +30,13 @@
    "proveedor": "Proveedor B",
    "cantidad": 500
   },
-  "estado": "Disponible"
+  "estado": "Disponible",
+  "vaccineType": "1212",
+  "originCountry": "121212",
+  "manufactureDate": "2024-08-26",
+  "expirationDate": "2024-08-26",
+  "purchaseDate": "2024-08-26",
+  "acquisitionDate": "2024-08-26"
  },
  {
   "id": 3,
@@ -80,13 +85,12 @@
  },
  {
   "id": 8,
-  "name_commercial": "asas",
-  "laboratory": "sas",
-  "vaccineType": "s",
-  "originCountry": "as",
-  "manufactureDate": "2024-08-22",
-  "expirationDate": "2024-08-22",
-  "purchaseDate": "2024-08-22",
-  "acquisitionDate": "2024-08-22"
+  "laboratory": "Lab111223",
+  "vaccineType": "China",
+  "originCountry": "Alemania",
+  "manufactureDate": "2024-08-26",
+  "expirationDate": "2024-08-26",
+  "purchaseDate": "2024-08-26",
+  "acquisitionDate": "2024-08-26"
  }
 ]

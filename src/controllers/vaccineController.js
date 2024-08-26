@@ -22,7 +22,6 @@ const vaccineController = {
         }
 
         let {commercialName, laboratory, vaccineType, originCountry, manufactureDate, expirationDate, purchaseDate, acquisitionDate} = req.body;
-        console.log("req.body ",req.body)
 
 
         const generateId = () =>  {
@@ -51,27 +50,41 @@ const vaccineController = {
 
 
 
-
         res.redirect('/vaccines');
     },
     edit: (req, res) =>{
-        const vaccineID = vaccines.find(vaccine => vaccine.id == req.params.id);
-        console.log(vaccineID)
-        res.render(path.resolve('./', './src/views/vaccine/editVaccine'), {vaccineID})
+        const vaccine = vaccines.find(vaccine => vaccine.id == req.params.id);
+        console.log("es una cadenaaa? ", vaccine)
+        res.render(path.resolve('./', './src/views/vaccine/editVaccine'), {vaccine})
     },
     update: (req, res) =>{
         const vaccineID = vaccines.find(vaccine => vaccine.id == req.params.id);
         const errors = validationResult(req);
-
         if (!errors.isEmpty()) {
             return res.render(path.resolve('./', './src/views/vaccine/editVaccine'), {errors: errors.mapped(), oldData: req.body, vaccineID});
         }
 
         let idVaccine = req.params.id;
+        console.log("id params ",idVaccine)
+        let { name_commercial, laboratory, vaccineType, originCountry, manufactureDate, expirationDate, purchaseDate, acquisitionDate } = req.body
+        let indexVaccine = vaccines.findIndex(vacc => vacc.id == idVaccine);
+        if (indexVaccine != -1){
+            vaccines[indexVaccine].name_commercial = name_commercial;
+            vaccines[indexVaccine].laboratory = laboratory;
+            vaccines[indexVaccine].vaccineType = vaccineType;
+            vaccines[indexVaccine].originCountry = originCountry;
+            vaccines[indexVaccine].manufactureDate = manufactureDate;
+            vaccines[indexVaccine].expirationDate = expirationDate;
+            vaccines[indexVaccine].purchaseDate = purchaseDate;
+            vaccines[indexVaccine].acquisitionDate = acquisitionDate;
 
-    }
-    
-
+            fs.writeFileSync(vaccineJSON, JSON.stringify(vaccines, null, ' '));
+            
+            res.redirect('/vaccines');
+        }else {
+            res.send('Vaccine no encontrado');
+        }
+    },
 }
 
 module.exports = vaccineController;
